@@ -192,7 +192,7 @@ class LimeExplainer:
             LimeConfig()
             .withNormalizeWeights(kwargs.get("normalise_weights", False))
             .withPerturbationContext(
-                PerturbationContext(self._jrandom, kwargs.get("perturbations", 1))
+                PerturbationContext(self._jrandom, kwargs.get("perturbations", 1), kwargs.get("std_dev", 0.01))
             )
             .withSamples(kwargs.get("samples", 300))
             .withDataDistribution(
